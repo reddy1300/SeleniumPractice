@@ -15,7 +15,7 @@ public class GreenKart {
         System.setProperty("webdriver.chrome.driver","C:\\Drivers\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         //Expected Array
-        String[] productList = {"Cucumber", "Brocolli", "Carrot"};
+        String[] productList = {"Cucumber", "Brocolli", "Carrot", "Brinjal"};
         driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
         driver.manage().window().maximize();
         List<WebElement> products = driver.findElements(By.cssSelector("h4.product-name"));
@@ -31,7 +31,7 @@ public class GreenKart {
             if (itemsNeeded.contains(formatetdName)){
                 driver.findElements(By.xpath("//div[@class='product-action']/button")).get(i).click();
 
-                if (j==3){
+                if (j==productList.length){
                     break;
                 }
             }
