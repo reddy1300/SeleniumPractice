@@ -3,6 +3,7 @@ package com.practice;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 
 public class UpdatedDropdown {
 
@@ -22,8 +23,10 @@ public class UpdatedDropdown {
 
     }
     driver.findElement(By.id("btnclosepaxoption")).click();
-    System.out.println(driver.findElement(By.id("divpaxinfo")).getText());
+    String itemsCount = driver.findElement(By.id("divpaxinfo")).getText();
+    Assert.assertEquals(itemsCount,"5 Adult");
 
 
     }
 }
+
